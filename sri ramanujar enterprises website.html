@@ -1,0 +1,2225 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sri Ramanujar Enterprises | Premium Furniture</title>
+
+<meta name="description"
+content="Sri Ramanujar Enterprises - Quality furniture, office furniture, school furniture, fabrication and custom interior works. Delivery across India.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+:root {
+    --gold: #d4af37;
+    --light-gold: #f5d76e;
+    --black: #080808;
+    --dark: #111;
+    --card: #171717;
+    --text: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   LOADING SCREEN
+========================================================= */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #080808;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader-logo {
+    color: var(--gold);
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.loader-line {
+    width: 180px;
+    height: 3px;
+    background: #333;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.loader-line span {
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: var(--gold);
+    animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(300%);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5000;
+
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+
+    transition: 0.4s;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+
+    padding: 18px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    bottom: -7px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    background: var(--gold);
+    color: #000;
+    padding: 11px 20px;
+    border-radius: 30px;
+}
+
+.nav-button::after {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    color: var(--gold);
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 140px 20px 80px;
+
+    position: relative;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.78),
+        rgba(0,0,0,0.88)
+    ),
+    url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+.small-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+
+    color: #ddd;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 15px 30px;
+    margin: 6px;
+
+    border-radius: 40px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #000;
+}
+
+.btn-gold:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    border: 1px solid var(--gold);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: #000;
+    transform: translateY(-4px);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    background: #0d0d0d;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.stat {
+    text-align: center;
+    padding: 35px 15px;
+
+    border-right: 1px solid #222;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat h2 {
+    color: var(--gold);
+    font-size: 35px;
+}
+
+.stat p {
+    color: #aaa;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading small {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    margin-top: 12px;
+}
+
+.section-heading p {
+    max-width: 750px;
+    margin: 15px auto 0;
+    color: #aaa;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: #0a0a0a;
+}
+
+.about-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.about-image {
+    min-height: 500px;
+
+    border-radius: 20px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.4)
+    ),
+    url("https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=90");
+
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.about-text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-text h2 span {
+    color: var(--gold);
+}
+
+.about-text p {
+    color: #bbb;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.about-list {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.about-list li {
+    margin: 15px 0;
+    color: #ddd;
+}
+
+.about-list li::first-letter {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    background: #111;
+}
+
+.service-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--card);
+
+    padding: 35px 25px;
+
+    border-radius: 18px;
+
+    border: 1px solid #292929;
+
+    transition: 0.4s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(212,175,55,0.08);
+
+    top: -30px;
+    right: -30px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 45px;
+}
+
+.service-card h3 {
+    color: var(--gold);
+    margin: 20px 0 12px;
+}
+
+.service-card p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products {
+    background: #080808;
+}
+
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    margin: 5px;
+
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gold);
+    color: #000;
+    border-color: var(--gold);
+}
+
+.product-grid {
+    max-width: 1300px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.product-card {
+    background: #151515;
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    border: 1px solid #292929;
+
+    transition: 0.4s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.product-image {
+    height: 230px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info span {
+    font-size: 12px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.product-info h3 {
+    margin: 10px 0;
+    font-size: 21px;
+}
+
+.product-info p {
+    color: #999;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why-us {
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.88)
+    ),
+    url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1800&q=90");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.why-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.why-card {
+    padding: 35px;
+
+    background: rgba(20,20,20,0.85);
+
+    border: 1px solid #333;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.why-card .number {
+    font-size: 45px;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.why-card h3 {
+    margin: 15px 0;
+}
+
+.why-card p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.testimonials {
+    background: #0d0d0d;
+}
+
+.testimonial-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.testimonial {
+    background: #171717;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    border: 1px solid #292929;
+}
+
+.stars {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.testimonial p {
+    color: #bbb;
+    line-height: 1.8;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.testimonial h4 {
+    color: white;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background: #111;
+}
+
+.contact-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+}
+
+.contact-info {
+    background: #171717;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid #292929;
+}
+
+.contact-item {
+    margin: 25px 0;
+}
+
+.contact-item strong {
+    color: var(--gold);
+    display: block;
+    margin-bottom: 7px;
+}
+
+.contact-item span {
+    color: #ccc;
+}
+
+.contact-form {
+    background: #171717;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid #292929;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background: #0d0d0d;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: var(--gold);
+}
+
+.contact-form textarea {
+    height: 130px;
+    resize: none;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background:
+    linear-gradient(
+        120deg,
+        #171717,
+        #080808
+    );
+
+    border-top: 1px solid #292929;
+}
+
+.cta h2 {
+    font-size: 42px;
+}
+
+.cta h2 span {
+    color: var(--gold);
+}
+
+.cta p {
+    color: #aaa;
+    margin: 15px 0 25px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #000;
+
+    padding: 50px 7% 25px;
+
+    border-top: 2px solid var(--gold);
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-brand h2 {
+    color: var(--gold);
+}
+
+.footer-brand p {
+    color: #888;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+    color: #888;
+    margin: 10px 0;
+}
+
+.footer-column a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #222;
+
+    text-align: center;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    z-index: 8000;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.12);
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 95px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gold);
+    color: #000;
+
+    border-radius: 50%;
+
+    z-index: 7000;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .service-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: #080808;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+    .service-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<div id="loader">
+
+    <div class="loader-logo">
+        SRI RAMANUJAR
+    </div>
+
+    <div class="loader-line">
+        <span></span>
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo">
+        SRI RAMANUJAR <span>ENTERPRISES</span>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <nav id="nav">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+
+        <a class="nav-button"
+           href="https://wa.me/918940179176"
+           target="_blank">
+           WhatsApp
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-content reveal">
+
+    <div class="small-title">
+        SRI RAMANUJAR ENTERPRISES
+    </div>
+
+    <h1>
+        Furniture That
+        <span>Defines Your Space</span>
+    </h1>
+
+    <p>
+        Quality furniture, reliable service and custom solutions
+        for homes, offices, schools and commercial spaces.
+        Delivery available across India.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#products"
+           class="btn btn-gold">
+           Explore Products
+        </a>
+
+        <a href="https://wa.me/918940179176?text=Hello%20Sri%20Ramanujar%20Enterprises%2C%20I%20am%20interested%20in%20your%20furniture."
+           target="_blank"
+           class="btn btn-outline">
+           Get a Quote
+        </a>
+
+    </div>
+
+</div>
+
+<div class="hero-scroll">
+    ↓ SCROLL TO EXPLORE
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<div class="stats">
+
+    <div class="stat">
+        <h2>500+</h2>
+        <p>Projects</p>
+    </div>
+
+    <div class="stat">
+        <h2>100%</h2>
+        <p>Quality Focus</p>
+    </div>
+
+    <div class="stat">
+        <h2>India</h2>
+        <p>Wide Delivery</p>
+    </div>
+
+    <div class="stat">
+        <h2>24/7</h2>
+        <p>Enquiry Support</p>
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+<div class="section-heading reveal">
+
+    <small>WHO WE ARE</small>
+
+    <h2>About Sri Ramanujar Enterprises</h2>
+
+</div>
+
+
+<div class="about-grid">
+
+    <div class="about-image reveal"></div>
+
+    <div class="about-text reveal">
+
+        <h2>
+            Quality.
+            <span>Style.</span>
+            Trust.
+        </h2>
+
+        <p>
+            Sri Ramanujar Enterprises provides furniture and
+            custom solutions designed for modern homes,
+            offices, schools and commercial spaces.
+        </p>
+
+        <p>
+            We focus on quality products, dependable service
+            and practical solutions that provide long-term value.
+        </p>
+
+        <ul class="about-list">
+
+            <li>⭐ Quality-focused products</li>
+
+            <li>⭐ Custom furniture solutions</li>
+
+            <li>⭐ Home and office furniture</li>
+
+            <li>⭐ School furniture</li>
+
+            <li>⭐ Steel and fabrication works</li>
+
+            <li>⭐ Delivery across India</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+<div class="section-heading reveal">
+
+    <small>WHAT WE DO</small>
+
+    <h2>Our Services</h2>
+
+    <p>
+        Furniture and solutions for different spaces and requirements.
+    </p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+    <div class="service-card reveal">
+
+        <div class="service-icon">🏠</div>
+
+        <h3>Home Furniture</h3>
+
+        <p>
+            Stylish and comfortable furniture
+            for living rooms, bedrooms and homes.
+        </p>
+
+    </div>
+
+
+    <div class="service-card reveal">
+
+        <div class="service-icon">🏢</div>
+
+        <h3>Office Furniture</h3>
+
+        <p>
+            Practical furniture solutions for
+            offices and professional workspaces.
+        </p>
+
+    </div>
+
+
+    <div class="service-card reveal">
+
+        <div class="service-icon">🏫</div>
+
+        <h3>School Furniture</h3>
+
+        <p>
+            Furniture solutions for classrooms,
+            schools and educational spaces.
+        </p>
+
+    </div>
+
+
+    <div class="service-card reveal">
+
+        <div class="service-icon">🔧</div>
+
+        <h3>Custom Works</h3>
+
+        <p>
+            Custom furniture, fabrication and
+            interior-related solutions.
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="products" id="products">
+
+<div class="section-heading reveal">
+
+    <small>OUR COLLECTION</small>
+
+    <h2>Featured Furniture</h2>
+
+    <p>
+        Explore some of the furniture categories
+        available from Sri Ramanujar Enterprises.
+    </p>
+
+</div>
+
+
+<div class="filter-buttons">
+
+    <button class="filter-btn active"
+            onclick="filterProducts('all', this)">
+        All
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('home', this)">
+        Home
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('office', this)">
+        Office
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterProducts('school', this)">
+        School
+    </button>
+
+</div>
+
+
+<div class="product-grid">
+
+
+    <div class="product-card reveal"
+         data-category="home">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=90"
+            alt="Sofa">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>Home</span>
+
+            <h3>Sofas</h3>
+
+            <p>
+                Comfortable and stylish seating
+                for modern living spaces.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-card reveal"
+         data-category="home">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=90"
+            alt="Bed">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>Home</span>
+
+            <h3>Beds</h3>
+
+            <p>
+                Comfortable bedroom furniture
+                designed for everyday use.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-card reveal"
+         data-category="home">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=90"
+            alt="Dining Table">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>Home</span>
+
+            <h3>Dining Tables</h3>
+
+            <p>
+                Dining solutions for families,
+                homes and modern interiors.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-card reveal"
+         data-category="office">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=90"
+            alt="Office Furniture">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>Office</span>
+
+            <h3>Office Furniture</h3>
+
+            <p>
+                Functional furniture for
+                productive workspaces.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-card reveal"
+         data-category="school">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=90"
+            alt="School Furniture">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>School</span>
+
+            <h3>School Furniture</h3>
+
+            <p>
+                Furniture solutions for
+                classrooms and educational spaces.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-card reveal"
+         data-category="office">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=90"
+            alt="Workplace">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>Office</span>
+
+            <h3>Workspaces</h3>
+
+            <p>
+                Modern workspace furniture
+                for professional environments.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-card reveal"
+         data-category="home">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=90"
+            alt="Interior Furniture">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>Home</span>
+
+            <h3>Interior Furniture</h3>
+
+            <p>
+                Furniture that complements
+                modern interior spaces.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-card reveal"
+         data-category="school">
+
+        <div class="product-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=900&q=90"
+            alt="Classroom">
+
+        </div>
+
+        <div class="product-info">
+
+            <span>School</span>
+
+            <h3>Classroom Solutions</h3>
+
+            <p>
+                Practical furniture for
+                classrooms and learning areas.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section class="why-us">
+
+<div class="section-heading reveal">
+
+    <small>WHY CHOOSE US</small>
+
+    <h2>Built Around Your Needs</h2>
+
+</div>
+
+
+<div class="why-grid">
+
+
+    <div class="why-card reveal">
+
+        <div class="number">01</div>
+
+        <h3>Quality</h3>
+
+        <p>
+            We focus on dependable products
+            and quality-focused workmanship.
+        </p>
+
+    </div>
+
+
+    <div class="why-card reveal">
+
+        <div class="number">02</div>
+
+        <h3>Custom Solutions</h3>
+
+        <p>
+            Furniture can be planned around
+            your space and requirements.
+        </p>
+
+    </div>
+
+
+    <div class="why-card reveal">
+
+        <div class="number">03</div>
+
+        <h3>Delivery</h3>
+
+        <p>
+            Delivery is available across India
+            for suitable orders.
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="testimonials">
+
+<div class="section-heading reveal">
+
+    <small>CUSTOMER EXPERIENCE</small>
+
+    <h2>What Customers Say</h2>
+
+</div>
+
+
+<div class="testimonial-grid">
+
+
+    <div class="testimonial reveal">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "Good quality furniture and
+            professional service."
+        </p>
+
+        <h4>Happy Customer</h4>
+
+    </div>
+
+
+    <div class="testimonial reveal">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "The furniture was made according
+            to our requirements."
+        </p>
+
+        <h4>Happy Customer</h4>
+
+    </div>
+
+
+    <div class="testimonial reveal">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "Good communication and reliable
+            service."
+        </p>
+
+        <h4>Happy Customer</h4>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+<div class="section-heading reveal">
+
+    <small>GET IN TOUCH</small>
+
+    <h2>Let's Discuss Your Requirement</h2>
+
+    <p>
+        Contact us for furniture enquiries,
+        custom requirements and orders.
+    </p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+    <div class="contact-info reveal">
+
+        <div class="contact-item">
+
+            <strong>📞 PHONE</strong>
+
+            <span>8940179176</span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>💬 WHATSAPP</strong>
+
+            <span>8940179176</span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>📧 EMAIL</strong>
+
+            <span>
+                sriramanujarenterprises16@gmail.com
+            </span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>📍 LOCATION</strong>
+
+            <span>
+                Sriperumbudur, Kanchipuram, Tamil Nadu
+            </span>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>🚚 DELIVERY</strong>
+
+            <span>
+                Delivery available across India
+            </span>
+
+        </div>
+
+
+        <a
+        href="https://wa.me/918940179176"
+        target="_blank"
+        class="btn btn-gold">
+
+        💬 Chat on WhatsApp
+
+        </a>
+
+    </div>
+
+
+    <div class="contact-form reveal">
+
+        <form onsubmit="sendWhatsApp(event)">
+
+            <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required>
+
+            <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required>
+
+            <select id="service" required>
+
+                <option value="">
+                    Select Requirement
+                </option>
+
+                <option>Home Furniture</option>
+
+                <option>Office Furniture</option>
+
+                <option>School Furniture</option>
+
+                <option>Custom Furniture</option>
+
+                <option>Fabrication Work</option>
+
+                <option>Interior Work</option>
+
+            </select>
+
+
+            <textarea
+            id="message"
+            placeholder="Tell us what you need..."
+            required></textarea>
+
+
+            <button
+            type="submit"
+            class="btn btn-gold">
+
+            Send Enquiry on WhatsApp
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <h2>
+        Looking for <span>Quality Furniture?</span>
+    </h2>
+
+    <p>
+        Talk to Sri Ramanujar Enterprises today.
+    </p>
+
+    <a
+    href="tel:8940179176"
+    class="btn btn-gold">
+
+    📞 Call 8940179176
+
+    </a>
+
+    <a
+    href="https://wa.me/918940179176"
+    target="_blank"
+    class="btn btn-outline">
+
+    💬 WhatsApp Us
+
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-grid">
+
+
+    <div class="footer-brand">
+
+        <h2>
+            SRI RAMANUJAR ENTERPRISES
+        </h2>
+
+        <p>
+            Quality furniture and custom solutions
+            for homes, offices, schools and commercial spaces.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#products">Products</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Contact</h3>
+
+        <a href="tel:8940179176">
+            📞 8940179176
+        </a>
+
+        <a href="https://wa.me/918940179176"
+           target="_blank">
+            💬 WhatsApp
+        </a>
+
+        <a href="mailto:sriramanujarenterprises16@gmail.com">
+            📧 Email
+        </a>
+
+        <a
+        href="https://sites.google.com/view/sriramanujarenterprises?pli=1&authuser=0"
+        target="_blank">
+
+            🌐 Existing Website
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Sri Ramanujar Enterprises.
+    All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     FLOATING BUTTONS
+===================================================== -->
+
+<a
+class="top"
+id="top"
+href="#home">
+
+↑
+
+</a>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/918940179176"
+target="_blank"
+title="Chat on WhatsApp">
+
+💬
+
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* LOADER */
+
+window.addEventListener("load", function() {
+
+    setTimeout(function() {
+
+        document.getElementById("loader").style.display = "none";
+
+    }, 900);
+
+});
+
+
+/* MOBILE MENU */
+
+function toggleMenu() {
+
+    document.getElementById("nav").classList.toggle("active");
+
+}
+
+
+/* CLOSE MOBILE MENU */
+
+document.querySelectorAll("nav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("nav").classList.remove("active");
+
+    });
+
+});
+
+
+/* PRODUCT FILTER */
+
+function filterProducts(category, button) {
+
+    const cards =
+    document.querySelectorAll(".product-card");
+
+    const buttons =
+    document.querySelectorAll(".filter-btn");
+
+
+    buttons.forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    cards.forEach(function(card) {
+
+        if (
+            category === "all" ||
+            card.dataset.category === category
+        ) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* WHATSAPP FORM */
+
+function sendWhatsApp(event) {
+
+    event.preventDefault();
+
+
+    const name =
+    document.getElementById("name").value;
+
+    const phone =
+    document.getElementById("phone").value;
+
+    const service =
+    document.getElementById("service").value;
+
+    const message =
+    document.getElementById("message").value;
+
+
+    const whatsappMessage =
+    "Hello Sri Ramanujar Enterprises,%0A%0A" +
+
+    "Name: " + encodeURIComponent(name) +
+
+    "%0APhone: " + encodeURIComponent(phone) +
+
+    "%0ARequirement: " +
+    encodeURIComponent(service) +
+
+    "%0AMessage: " +
+    encodeURIComponent(message);
+
+
+    window.open(
+        "https://wa.me/918940179176?text=" +
+        whatsappMessage,
+        "_blank"
+    );
+
+}
+
+
+/* REVEAL ANIMATION */
+
+function revealElements() {
+
+    const elements =
+    document.querySelectorAll(".reveal");
+
+
+    elements.forEach(function(element) {
+
+        const windowHeight =
+        window.innerHeight;
+
+        const elementTop =
+        element.getBoundingClientRect().top;
+
+
+        if (elementTop < windowHeight - 80) {
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    revealElements
+);
+
+window.addEventListener(
+    "load",
+    revealElements
+);
+
+
+/* BACK TO TOP */
+
+window.addEventListener("scroll", function() {
+
+    const top =
+    document.getElementById("top");
+
+
+    if (window.scrollY > 500) {
+
+        top.classList.add("show");
+
+    } else {
+
+        top.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
+
